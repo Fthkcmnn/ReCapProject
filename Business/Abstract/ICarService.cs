@@ -4,7 +4,7 @@ using Entities.DTOs;
 
 namespace Business.Abstract;
 
-internal interface ICarService
+public interface ICarService
 {
     IResult Add(Car entity);
     IResult Update(Car entity);

@@ -1,10 +1,13 @@
 using System.Diagnostics;
 using Business.Abstract;
 using Business.Constant;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation.Core.Aspects.Autofac.Validation;
 using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 
 namespace Business.Concrete;
 
@@ -20,14 +23,9 @@ public class CarManager : ICarService
         _carDal = carRepository ?? throw new ArgumentNullException(nameof(carRepository));
     }
 
-    /// <inheritdoc />
+    [ValidationAspect(typeof(CarValidator))]
     public IResult Add(Car car)
     {
-        if (car.Description.Length <= 2)
-            return new ErrorResult(Messages.DescriptionLengthError);
-        if (car.DailyPrice <= 0)
-            return new ErrorResult(Messages.HigherThanMaximumPrice);
-
         try
         {
             _carDal?.Add(car);

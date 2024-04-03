@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 //rentalManger.GetRentalDetailsAsync().Result.Data.ToList().ForEach(os => Console.Write($"ReantalID: {os.RentalId,-10} \tCarName: {os.CarName,-32} \tCustomer FullName: {os.CustomerFullName,-15}"));
 
-
+Console.WriteLine("Hello World!");
 
 
 

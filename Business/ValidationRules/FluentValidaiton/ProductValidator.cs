@@ -8,16 +8,16 @@ using Entities.Concrete;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class ProductValidator : AbstractValidator<Car>
+    public class CarValidator : AbstractValidator<Car>
     {
-        public ProductValidator()
+        public CarValidator()
         {
-            RuleFor(p => p.Description).MinimumLength(2);
-            RuleFor(p => p.Description).NotEmpty();
-            RuleFor(p => p.ColorId).NotEmpty();
-            RuleFor(p => p.DailyPrice).GreaterThan(0);
-            RuleFor(p => p.DailyPrice).GreaterThanOrEqualTo(10).When(p => p.ColorId == 1);
-            RuleFor(p => p.Description).Must(startWithA).WithMessage("Açıklama A harfi ile başlamalı");
+            RuleFor(c => c.Description).MinimumLength(2);
+            RuleFor(c => c.Description).NotEmpty();
+            RuleFor(c => c.ColorId).NotEmpty();
+            RuleFor(c => c.DailyPrice).GreaterThan(0);
+            //RuleFor(c => c.DailyPrice).GreaterThanOrEqualTo(10).When(p => p.ColorId == 1);
+            RuleFor(c => c.Description).Must(startWithA).WithMessage("Açıklama A harfi ile başlamalı");
         }
 
         private bool startWithA(string arg)
