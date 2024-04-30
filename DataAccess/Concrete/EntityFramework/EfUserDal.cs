@@ -1,10 +1,11 @@
 ﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal:EfEntityRepositoryBase<User,ReCapContext>,IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, ReCarContext>, IUserDal
     {
         
     }

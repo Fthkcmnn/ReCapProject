@@ -2,41 +2,49 @@
 using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Business.Concrete;
-
-public class ColorManager : IColorSevice
+namespace Business.Concrete
 {
-    public IColorDal _colorDal;
-
-    public ColorManager(IColorDal colorDal)
+    public class ColorManager : IColorService
     {
-        _colorDal = colorDal;
-    }
+        private readonly IColorDal _colorDal;
 
-    public IResult Add(Color entity)
-    {
-        _colorDal.Add(entity);
-        return new SuccessResult();
-    }
+        public ColorManager(IColorDal colorDal)
+        {
+            _colorDal = colorDal;
+        }
 
-    public IResult Delete(Color entity)
-    {
-        throw new NotImplementedException();
-    }
+        public IResult Add(Color entity)
+        {
+            _colorDal.Add(entity);
+            return new SuccessResult("Color has been successfully added.");
+        }
 
-    public Task<IDataResult<IEnumerable<Color>>> GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
+        public IResult Delete(Color entity)
+        {
+            _colorDal.Delete(entity);
+            return new SuccessResult("Color has been successfully deleted.");
+        }
 
-    public Task<IEnumerable<Color>> GetColorByName()
-    {
-        throw new NotImplementedException();
-    }
+       public async Task<IDataResult<IEnumerable<Color>>> GetAllAsync()
+        {
+            var colors = await _colorDal.GetAllAsync();
+            return new SuccessDataResult<IEnumerable<Color>>(colors);
+        }
 
-    public IResult Update(Color entity)
-    {
-        throw new NotImplementedException();
+        public async Task<IEnumerable<Color>> GetColorByName(string name)
+        {
+            return await _colorDal.GetAllAsync(color => color.name.ToLower() == name.ToLower());
+        }
+
+
+        public IResult Update(Color entity)
+        {
+            _colorDal.Update(entity);
+            return new SuccessResult("Color has been successfully updated.");
+        }
     }
 }

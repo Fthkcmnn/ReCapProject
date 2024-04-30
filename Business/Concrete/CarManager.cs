@@ -115,4 +115,10 @@ public class CarManager : ICarService
                 message: Messages.ExMessage);
         }
     }
+
+    public IDataResult<IEnumerable<Car>> GetAll()
+    {
+        var resutl = _carDal?.GetAll();
+        return new SuccessDataResult<IEnumerable<Car>>(resutl, Messages.CarsListed);
+    }
 }

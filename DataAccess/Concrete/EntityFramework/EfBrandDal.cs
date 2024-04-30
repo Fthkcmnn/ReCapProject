@@ -1,9 +1,10 @@
 ﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBrandDal : EfEntityRepositoryBase<Brand, ReCapContext>
+    public class EfBrandDal : EfEntityRepositoryBase<Brand, ReCarContext>
     {
 
     }

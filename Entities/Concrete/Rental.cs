@@ -1,19 +1,36 @@
-﻿using Core.Entities;
-using System.ComponentModel.DataAnnotations;
-
 namespace Entities.Concrete
 {
-    public class Rental : IEntity
+    using Core.Entities;
+    using Entities.Concrete;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public partial class Rental:IEntity
     {
-        public int RentalId { get; set; }
-        public int CarId { get; set; }
-        public int CustomerId { get; set; }
+        public int rentalId { get; set; }
 
-        [Range(typeof(DateTime), "1/1/1900", "6/6/2079")]
-        public DateTime RentDate { get; set; }
+        public int? userID { get; set; }
 
-        [Range(typeof(DateTime), "1/1/1900", "6/6/2079")]
-        public DateTime? ReturnDate { get; set; }
+        public int? carID { get; set; }
 
+        public int? customerID { get; set; }
+
+        public int? packageID { get; set; }
+
+        public decimal? price { get; set; }
+
+        public DateTime? rentDate { get; set; }
+
+        public DateTime? returnDate { get; set; }
+
+        public virtual Car Car { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        public virtual Package Package { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

@@ -1,17 +1,18 @@
 ﻿using System.Linq.Expressions;
 using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
 using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfRentalDal : EfEntityRepositoryBase<Rental, ReCapContext>, IRentalDal
+    public class EfRentalDal : EfEntityRepositoryBase<Rental, ReCarContext>, IRentalDal
     {
         public async Task<IEnumerable<RentalDetailDTOs>> GetRentalDetailAsync(Expression<Func<RentalDetailDTOs, bool>>? filter = null)
         {
-            //using var context = new ReCapContext();
+            //using var context = new ReCarContext();
 
             //var rentalDetailDTOs = await context.Rental
             //    .Include(r => r) // Car entity should be included, not the CarId

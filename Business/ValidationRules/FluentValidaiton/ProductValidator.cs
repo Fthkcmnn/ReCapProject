@@ -15,7 +15,6 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.Description).MinimumLength(2);
             RuleFor(c => c.Description).NotEmpty();
             RuleFor(c => c.ColorId).NotEmpty();
-            RuleFor(c => c.DailyPrice).GreaterThan(0);
             //RuleFor(c => c.DailyPrice).GreaterThanOrEqualTo(10).When(p => p.ColorId == 1);
             RuleFor(c => c.Description).Must(startWithA).WithMessage("Açıklama A harfi ile başlamalı");
         }

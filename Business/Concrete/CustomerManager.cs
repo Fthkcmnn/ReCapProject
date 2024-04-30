@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<IEnumerable<Customer>> GetCustomerById(int id)
         {
-            var result = _customerDal.GetAll(customer => customer.CustomerId == id);
+            var result = _customerDal.GetAll(customer => customer.customerID == id);
             return new SuccessDataResult<IEnumerable<Customer>>(result);
         }
 

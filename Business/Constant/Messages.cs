@@ -1,4 +1,6 @@
-﻿namespace Business.Constant
+﻿using Entities.Concrete;
+
+namespace Business.Constant
 {
     public static class Messages
     {
@@ -43,5 +45,11 @@
         internal static readonly string UserDeleted = "Kullanıcı Silindi";
 
         internal static readonly string UserUpdated = "Kullanıcı Güncellendi";
+
+        internal static readonly string CarImageAdded = "Araba resmi eklendi.";
+
+        internal static readonly string NoCarImage = "Araba resmi bulunamadı.";
+
+        internal static readonly string CarImagesListed = "Araba resimleri listelendi.";
     }
 }

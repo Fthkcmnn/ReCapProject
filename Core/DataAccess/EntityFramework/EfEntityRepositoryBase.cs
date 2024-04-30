@@ -37,7 +37,7 @@ public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEnti
         return context.Set<TEntity>().SingleOrDefault(filter) ?? new TEntity();
     }
 
-    public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter = null)
+    public List<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter = null)
     {
         using var context = new TContext();
 
