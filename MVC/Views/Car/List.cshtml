@@ -1,11 +1,11 @@
-﻿@model MVC.Models.CarModels.CarListViewModel
+﻿@model MVC.Models.CarModels.CarIndexViewModel
 @{
     ViewData["Title"] = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>List</h1>
-@foreach (var car in Model.cars)
+@foreach (var car in Model.CarDetails)
 {
     <div>
    @*      <h2>@car.</h2>

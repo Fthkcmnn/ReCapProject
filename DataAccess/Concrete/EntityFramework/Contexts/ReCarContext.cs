@@ -17,12 +17,38 @@ public partial class ReCarContext : DbContext
 
         }
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Car>()
+                .Property(e => e.Milage)
+                .HasPrecision(10, 3);
 
+        modelBuilder.Entity<Package>()
+            .Property(e => e.Price)
+            .HasPrecision(19, 4);
+
+        modelBuilder.Entity<Package>()
+            .Property(e => e.Surcharge)
+            .HasPrecision(19, 4);
+
+        modelBuilder.Entity<Rental>()
+            .Property(e => e.Price)
+            .HasPrecision(18, 0);
+
+        modelBuilder.Entity<User>()
+            .Property(e => e.PasswordSalt)
+            .IsUnicode(false);
+
+        modelBuilder.Entity<User>()
+            .Property(e => e.PasswordHash)
+            .IsUnicode(false);
+    }
     public virtual DbSet<Brand> Brand { get; set; }
     public virtual DbSet<Car> Car { get; set; }
     public virtual DbSet<CarImage> CarImage { get; set; }
     public virtual DbSet<Color> Color { get; set; }
     public virtual DbSet<Customer> Customer { get; set; }
+    public virtual DbSet<Fuel> Fuel { get; set; }
     public virtual DbSet<Model> Model { get; set; }
     public virtual DbSet<Package> Package { get; set; }
     public virtual DbSet<Rental> Rental { get; set; }

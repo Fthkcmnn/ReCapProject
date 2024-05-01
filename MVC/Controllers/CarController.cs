@@ -16,19 +16,11 @@ namespace MVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult List()
-        {
-            //var model = new CarListViewModel
-            //{
-            //    cars = _carService.GetAllAsync().Result.Data.ToList<Car>()
-                
-            //};
-            var test = _carService.GetAllAsync().Result.Data;
-            var result = "asdasd";
-            return View();
+            var model = new CarIndexViewModel
+            {
+                CarDetails = _carService.GetCarDetails().Data?.ToList()
+            };
+            return View(model);
         }
     }
 }

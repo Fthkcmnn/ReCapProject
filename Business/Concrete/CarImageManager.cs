@@ -38,8 +38,8 @@ namespace Business.Concrete
 
                     var carImages = new CarImage
                     {
-                        imagePath = filePath,
-                        date = DateTime.Now
+                        ImagePath = filePath,
+                        Date = DateTime.Now
                     };
                     //_carImageService.Add();
 

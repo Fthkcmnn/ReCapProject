@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<Transmission> GetTransmissionById(int id)
         {
-            var transmission = _transmissionDal.Get(t => t.transmissionID == id);
+            var transmission = _transmissionDal.Get(t => t.TransmissionID == id);
             if (transmission != null)
             {
                 return new SuccessDataResult<Transmission>(transmission);

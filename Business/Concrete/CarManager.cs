@@ -54,29 +54,16 @@ public class CarManager : ICarService
         var result = _carDal?.Get(car => car.CarId == id);
         if (result is null)
         {
-            return new ErrorDataResult<Car>(result,Messages.Null);
+            return new ErrorDataResult<Car>(result, Messages.Null);
         }
         return new SuccessDataResult<Car>(result, Messages.CarsListed);
     }
 
-    public IDataResult<Car> GetCarByDescription(string description)
-    {
-        if (string.IsNullOrWhiteSpace(description))
-            return new ErrorDataResult<Car>(Messages.Null);
-
-        Debug.Assert(_carDal != null, nameof(_carDal) + " != null");
-        var car = _carDal.Get(car => car.Description == description);
-
-        if (car is null) return new ErrorDataResult<Car>($"Açýklamasý '{description}' olan araba bulunamadý.");
-
-        return new SuccessDataResult<Car>(car);
-    }
-
-    public async Task<IDataResult<IEnumerable<CarDetailDTOs>>> GetCarDetailsByDescription(string description)
+    public IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetailsByDescription(string description)
     {
         try
         {
-            var result = await _carDal.GetCarDitailsAsync(cd => cd.CarName.ToUpper() == description.ToUpper());
+            var result = _carDal.GetCarDitails(cd => cd.Description.ToUpper() == description.ToUpper());
             return new SuccessDataResult<IEnumerable<CarDetailDTOs>>(result);
         }
         catch (Exception ex)
@@ -88,11 +75,12 @@ public class CarManager : ICarService
                 message: "Bir hata oluþtu. Detaylar için loglarý kontrol edin.");
         }
     }
-    public async Task<IDataResult<IEnumerable<CarDetailDTOs>>> GetCarDetailsAsync()
+
+    public IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetails()
     {
         try
         {
-            var result = await _carDal.GetCarDitailsAsync();
+            var result = _carDal.GetCarDitails();
             return new SuccessDataResult<IEnumerable<CarDetailDTOs>>(result);
         }
         catch (Exception ex)
@@ -100,6 +88,12 @@ public class CarManager : ICarService
             return new ErrorDataResult<IEnumerable<CarDetailDTOs>>(
                 message: Messages.ExMessage);
         }
+    }
+
+    public IDataResult<IEnumerable<Car>> GetAll()
+    {
+        var resutl = _carDal?.GetAll();
+        return new SuccessDataResult<IEnumerable<Car>>(resutl, Messages.CarsListed);
     }
 
     public async Task<IDataResult<IEnumerable<Car>>> GetAllAsync()
@@ -116,9 +110,5 @@ public class CarManager : ICarService
         }
     }
 
-    public IDataResult<IEnumerable<Car>> GetAll()
-    {
-        var resutl = _carDal?.GetAll();
-        return new SuccessDataResult<IEnumerable<Car>>(resutl, Messages.CarsListed);
-    }
+
 }

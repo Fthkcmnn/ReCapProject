@@ -13,11 +13,11 @@ namespace Entities.Concrete
             Cars = new HashSet<Car>();
         }
 
-        public int modelID { get; set; }
+        public int ModelID { get; set; }
 
-        public int? brandID { get; set; }
+        public int BrandID { get; set; }
 
-        public int? name { get; set; }
+        public string Name { get; set; }
 
         public virtual Brand Brand { get; set; }
 

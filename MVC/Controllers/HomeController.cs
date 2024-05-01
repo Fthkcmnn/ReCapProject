@@ -18,6 +18,12 @@ namespace MVC.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Add(string a)
+        //{
+            
+        //}
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -8,13 +8,13 @@ namespace Entities.Concrete
 
     public partial class CarImage:IEntity
     {
-        public int carImageID { get; set; }
+        public int CarImageID { get; set; }
 
-        public int? carID { get; set; }
+        public int? CarID { get; set; }
 
-        public string imagePath { get; set; }
+        public string ImagePath { get; set; }
 
-        public DateTime? date { get; set; }
+        public DateTime? Date { get; set; }
 
         public virtual Car Car { get; set; }
     }

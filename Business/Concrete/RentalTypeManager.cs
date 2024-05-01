@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<RentalType> GetRentalTypeById(int id)
         {
-            var rentalType = _rentalTypeDal.Get(rt => rt.rentalTypeID == id);
+            var rentalType = _rentalTypeDal.Get(rt => rt.RentalTypeID == id);
             if (rentalType != null)
             {
                 return new SuccessDataResult<RentalType>(rentalType);

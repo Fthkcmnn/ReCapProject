@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+    <title>RentACar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    @* @RenderSection("Styles", required: false) <!-- Bu satır, View'lerden gelen CSS dosyalarını eklemek için kullanılır --> *@
+
 </head>
 <body>
     <!-- BEGIN nav -->
@@ -41,7 +43,7 @@
                         <a href="@Url.Action("Index", "Home")" class="nav-link">Ana Sayfa</a>
                     </li>
                     <li class="nav-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "About" ? "active" : "")">
-                        <a href="@Url.Action("About", "About")" class="nav-link">Hakkında</a>
+                        <a href="@Url.Action("Index", "About")" class="nav-link">Hakkında</a>
                     </li>
                     <li class="nav-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Services" ? "active" : "")">
                         <a href="@Url.Action("Index", "Services")" class="nav-link">Hizmetler</a>
@@ -133,8 +135,9 @@
 
     <!-- END footer -->
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    @* @RenderSection("Scripts", required: false) <!-- Bu satır, View'lerden gelen JavaScript dosyalarını eklemek için kullanılır --> *@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>

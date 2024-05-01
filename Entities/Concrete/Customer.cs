@@ -13,22 +13,17 @@ namespace Entities.Concrete
             Rentals = new HashSet<Rental>();
         }
 
-        public int customerID { get; set; }
+        public int CustomerID { get; set; }
 
-        [StringLength(150)]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
-        [StringLength(150)]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
 
-        [StringLength(50)]
-        public string phone { get; set; }
+        public string Phone { get; set; }
 
-        [StringLength(50)]
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        [StringLength(150)]
-        public string adress { get; set; }
+        public string Adress { get; set; }
 
         public virtual ICollection<Rental> Rentals { get; set; }
     }

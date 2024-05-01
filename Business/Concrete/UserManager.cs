@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public async Task<IDataResult<User>> GetByIdAsync(int id)
         {
-            return new SuccessDataResult<User>(await _userDal.GetAsync(user => user.userId == id));
+            return new SuccessDataResult<User>(await _userDal.GetAsync(user => user.UserId == id));
         }
 
         public IResult Update(User user)

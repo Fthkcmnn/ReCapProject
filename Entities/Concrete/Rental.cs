@@ -9,23 +9,21 @@ namespace Entities.Concrete
 
     public partial class Rental:IEntity
     {
-        public int rentalId { get; set; }
+        public int RentalId { get; set; }
 
-        public int? userID { get; set; }
+        public int? UserID { get; set; }
 
-        public int? carID { get; set; }
+        public int? CarID { get; set; }
 
-        public int? customerID { get; set; }
+        public int? CustomerID { get; set; }
 
-        public int? packageID { get; set; }
+        public int? PackageID { get; set; }
 
-        public decimal? price { get; set; }
+        public decimal? Price { get; set; }
 
-        public DateTime? rentDate { get; set; }
+        public DateTime? RentDate { get; set; }
 
-        public DateTime? returnDate { get; set; }
-
-        public virtual Car Car { get; set; }
+        public DateTime? ReturnDate { get; set; }
 
         public virtual Customer Customer { get; set; }
 

@@ -4,21 +4,11 @@ using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 
 
 
 
-ReCarContext context = new ReCarContext();
-try
-{
-    var result = context.Car.ToList();
-    
-}
-catch (Exception e)
-{
-
-
-    throw new Exception(e.Message);
-
-}
+TestContext context = new TestContext();
+context.Car.ToList().ForEach(c => Console.WriteLine(c.Description));

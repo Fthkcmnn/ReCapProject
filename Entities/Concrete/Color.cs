@@ -13,9 +13,9 @@ namespace Entities.Concrete
             Cars = new HashSet<Car>();
         }
 
-        public int colorId { get; set; }
+        public int ColorId { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public virtual ICollection<Car> Cars { get; set; }
     }

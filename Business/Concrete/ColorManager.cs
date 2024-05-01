@@ -37,7 +37,7 @@ namespace Business.Concrete
 
         public async Task<IEnumerable<Color>> GetColorByName(string name)
         {
-            return await _colorDal.GetAllAsync(color => color.name.ToLower() == name.ToLower());
+            return await _colorDal.GetAllAsync(color => color.Name.ToLower() == name.ToLower());
         }
 
 

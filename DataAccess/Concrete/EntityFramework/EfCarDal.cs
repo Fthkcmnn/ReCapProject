@@ -9,16 +9,23 @@ namespace DataAccess.Concrete.EntityFramework;
 
 public class EfCarDal : EfEntityRepositoryBase<Car, ReCarContext>, ICarDal
 {
-    public async Task<IEnumerable<CarDetailDTOs>> GetCarDitailsAsync(Expression<Func<CarDetailDTOs, bool>>? filter = null)
+    public IEnumerable<CarDetailDTOs> GetCarDitails(Expression<Func<CarDetailDTOs, bool>>? filter = null)
     {
         using var context = new ReCarContext();
-        var result = context.Car.Select(car => new CarDetailDTOs
+        var result = context.Car.Include(c => c.CarImage).Select(car => new CarDetailDTOs
         {
-            CarId = car.CarId,
-            CarName = car.Description,
-            BrandName = context.Brand.SingleOrDefault(brand => brand.brandID == car.BrandId).name,
-            ColorName = context.Color.SingleOrDefault(color => color.colorId == car.ColorId).name
+            BrandName = car.Brand.Name,
+            CarID = car.CarId,
+            ColorName = car.Color.Name,
+            Description = car.Description,
+            Fuel = car.Fuel.Name,
+            Luggage = car.Luggage,
+            Mileage = car.Milage,
+            ModelName = car.Model.Name,
+            ModelYear = car.ModelYear,
+            Seats = car.Seats,
+            Transmission = car.Transmission.Name
         });
-        return await result.ToListAsync();
+        return result.ToList();
     }
 }

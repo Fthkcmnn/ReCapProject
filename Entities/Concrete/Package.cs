@@ -11,23 +11,23 @@ namespace Entities.Concrete
     {
         public Package()
         {
-            Rentals = new HashSet<Rental>();
+            Rental = new HashSet<Rental>();
         }
 
-        public int packageID { get; set; }
+        public int PackageID { get; set; }
 
-        public decimal? price { get; set; }
+        public decimal? Price { get; set; }
 
-        public int? rentalTypeID { get; set; }
+        public int? RentalTypeID { get; set; }
 
-        public int? carID { get; set; }
+        public int? CarID { get; set; }
 
-        public decimal? surcharge { get; set; }
+        public decimal? Surcharge { get; set; }
 
         public virtual Car Car { get; set; }
 
         public virtual RentalType RentalType { get; set; }
 
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public virtual ICollection<Rental> Rental { get; set; }
     }
 }

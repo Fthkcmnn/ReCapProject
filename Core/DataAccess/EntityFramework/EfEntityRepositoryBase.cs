@@ -44,8 +44,8 @@ public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEnti
         IQueryable<TEntity> query = context.Set<TEntity>();
 
         if (filter != null) query = query.Where(filter);
-
-        return query.ToList();
+        var result = query.ToList();
+        return result;
     }
 
     public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>>? filter = null)

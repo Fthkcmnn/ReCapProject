@@ -30,7 +30,7 @@ namespace Business.Concrete
 
         public IDataResult<Model> GetById(int id)
         {
-            var model = _modelDal.Get(m => m.modelID == id);
+            var model = _modelDal.Get(m => m.ModelID == id);
             if (model != null)
             {
                 return new SuccessDataResult<Model>(model);

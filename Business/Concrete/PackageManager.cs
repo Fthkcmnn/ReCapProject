@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<Package> GetPackageById(int id)
         {
-            var package = _packageDal.Get(p => p.packageID == id);
+            var package = _packageDal.Get(p => p.PackageID == id);
             if (package != null)
             {
                 return new SuccessDataResult<Package>(package);

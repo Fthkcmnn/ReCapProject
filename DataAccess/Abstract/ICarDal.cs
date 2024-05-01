@@ -7,5 +7,5 @@ namespace DataAccess.Abstract;
 
 public interface ICarDal : IEntityRepository<Car>
 {
-    Task<IEnumerable<CarDetailDTOs>> GetCarDitailsAsync(Expression<Func<CarDetailDTOs, bool>>? filter = null);
+    IEnumerable<CarDetailDTOs> GetCarDitails(Expression<Func<CarDetailDTOs, bool>>? filter = null);
 }
