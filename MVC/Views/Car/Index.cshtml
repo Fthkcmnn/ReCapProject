@@ -23,23 +23,26 @@
             @foreach (var car in Model.CarDetails)
             {
                 <div class="col-md-4">
-                    <div class="car-wrap rounded ftco-animate">
+                    <div class="car-wrap rounded ftco-animate fadeInUp ftco-animated">
                         <div class="img rounded d-flex align-items-end" style="background-image: url('@car.ImagePath');">
                         </div>
                         <div class="text">
-                            <h2 class="mb-0"><a href="car-single.html">'@car</a></h2>
+                            <h2 class="mb-0"><a asp-controller="Car" asp-action="Details" asp-route-id="@car.CarID">@car.ModelName</a></h2>
                             <div class="d-flex mb-3">
-                                <span class="cat">Brand:@car</span>
-                                <p class="price ml-auto">$@car <span>/day</span></p>
+                                <span class="cat">@car.BrandName</span>
+                                <p class="price ml-auto">
+                                    @string.Format("{0:0.00}", @car.PerDayRate)₺<span>/Günlük</span>
+                                </p>
                             </div>
                             <p class="d-flex mb-0 d-block">
-                                <a href="#" class="btn btn-primary py-2 mr-1">Book now</a>
-                                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
+                                <a asp-controller="Car" asp-action="Details" asp-route-id="@car.CarID" class="btn btn-primary py-2 mr-1">Rezarvasyon</a>
+                                <a asp-controller="Car" asp-action="Detay" asp-route-id="@car.CarID" class="btn btn-secondary py-2 ml-1">İncele</a>
                             </p>
                         </div>
                     </div>
                 </div>
             }
+
         </div>
         <div class="row mt-5">
             <div class="col text-center">

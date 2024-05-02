@@ -110,5 +110,9 @@ public class CarManager : ICarService
         }
     }
 
-
+	public IDataResult<CarDetailDTOs> GetCarDetailsById(int id)
+	{
+		var result = _carDal.GetCarDitail(cd => cd.CarID == id);
+        return new SuccessDataResult<CarDetailDTOs>(result);
+	}
 }

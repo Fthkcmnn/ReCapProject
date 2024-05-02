@@ -14,5 +14,6 @@ public interface ICarService
     IDataResult<IEnumerable<Car>> GetAll();
     Task<IDataResult<IEnumerable<Car>>> GetAllAsync();
     IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetails();
-    IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetailsByDescription(string description);
+	IDataResult<CarDetailDTOs> GetCarDetailsById(int id);
+	IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetailsByDescription(string description);
 }

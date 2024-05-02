@@ -38,7 +38,7 @@ namespace Business.Concrete
 
                     var carImages = new CarImage
                     {
-                        ImagePath = filePath,
+                        imagePath = filePath,
                         Date = DateTime.Now
                     };
                     //_carImageService.Add();

@@ -22,5 +22,18 @@ namespace MVC.Controllers
             };
             return View(model);
         }
+
+        public IActionResult Detay(int id)
+        {
+            var model = new CarDetayViewModel
+            {
+                CarDetails = _carService.GetCarDetailsById(id).Data
+            };
+            if (model == null)
+            {
+                return BadRequest();
+            }
+            return View(model);
+        }
     }
 }
