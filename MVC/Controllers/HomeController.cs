@@ -1,33 +1,43 @@
+using Business.Abstract;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
+using MVC.Models.CarModels;
+using MVC.Models.HomeModels;
 using System.Diagnostics;
 
 namespace MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICarService _carService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ICarService carService)
         {
-            _logger = logger;
+            _carService = carService;
         }
 
         public IActionResult Index()
         {
-            return View();
+
+            var model = new HomeIndexViewModel
+            {
+                CarDetails = _carService.GetCarDetails().Data.Take(5).ToList()
+            };
+            return View(model);
         }
 
-        //[HttpPost]
-        //public IActionResult Add(string a)
+  
+        public IActionResult FloatingCars()
+        {
+            return PartialView("_FloatingCars");
+        }
+
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
         //{
-            
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         //}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

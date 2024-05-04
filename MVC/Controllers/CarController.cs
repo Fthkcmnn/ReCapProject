@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using X.PagedList;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models.CarModels;
+using System.Drawing.Printing;
 
 namespace MVC.Controllers
 {
@@ -14,11 +16,23 @@ namespace MVC.Controllers
             _carService = carService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
+            //if (page < 1)
+            //{
+            //    return NotFound();
+            //}
+            //int pageNumber = page; // Sayfa numarasını al, yoksa varsayılan olarak 1.
+            //int pageSize = 10; // Her sayfada kaç öğe gösterileceği.
+            //var records = _carService.GetCarDetails().Data.ToPagedList(pageNumber, pageSize);
+            
+            //if (records.PageNumber != 1 && page > records.PageCount)
+            //{
+            //    return NotFound();
+            //}
             var model = new CarIndexViewModel
             {
-                CarDetails = _carService.GetCarDetails().Data?.ToList()
+                CarDetails = _carService.GetCarDetails().Data.ToList()
             };
             return View(model);
         }
