@@ -5,7 +5,6 @@ namespace Entities.Concrete
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
     public partial class Brand:IEntity
     {
         public Brand()

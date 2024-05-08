@@ -6,7 +6,7 @@ namespace Entities.Concrete
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class Customer:IEntity  
+    public partial class Customer : IEntity
     {
         public Customer()
         {
@@ -23,7 +23,10 @@ namespace Entities.Concrete
 
         public string Email { get; set; }
 
+        public string Password { get; set; }
+
         public string Adress { get; set; }
+        public bool isDeleted { get; set; } = false;
 
         public virtual ICollection<Rental> Rentals { get; set; }
     }

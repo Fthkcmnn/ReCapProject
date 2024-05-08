@@ -16,4 +16,5 @@ public interface ICarService
     IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetails();
 	IDataResult<CarDetailDTOs> GetCarDetailsById(int id);
 	IDataResult<IEnumerable<CarDetailDTOs>> GetCarDetailsByDescription(string description);
+    IDataResult<CarDetailEditDTO> GetCarDetailEdit(int id);
 }

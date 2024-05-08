@@ -4,6 +4,7 @@ namespace MVC.Models.CarModels
 {
 	public class CarDetayViewModel
 	{
-		public CarDetailDTOs? CarDetails { get; set; }
+		public CarDetailDTOs? CarDetail { get; set; }
+		public List<CarDetailDTOs?> CarDetails { get; set; }
 	}
 }

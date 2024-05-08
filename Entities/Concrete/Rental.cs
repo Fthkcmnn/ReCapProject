@@ -13,8 +13,6 @@ namespace Entities.Concrete
 
         public int? UserID { get; set; }
 
-        public int? CarID { get; set; }
-
         public int? CustomerID { get; set; }
 
         public int? PackageID { get; set; }

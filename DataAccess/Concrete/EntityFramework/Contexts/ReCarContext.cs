@@ -1,14 +1,20 @@
 using Entities.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection.Emit;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts;
 
-public partial class ReCarContext : DbContext
+public class ReCarContext : DbContext
 {
+    //public ReCarContext(DbContextOptions<ReCarContext> options)
+    //    : base(options)
+    //{
+    //}
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
@@ -19,8 +25,11 @@ public partial class ReCarContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+
         modelBuilder.Entity<Car>()
-                .Property(e => e.Milage)
+                .Property(e => e.Mileage)
                 .HasPrecision(10, 3);
 
         modelBuilder.Entity<Package>()
@@ -42,7 +51,9 @@ public partial class ReCarContext : DbContext
         modelBuilder.Entity<User>()
             .Property(e => e.PasswordHash)
             .IsUnicode(false);
+
     }
+
     public virtual DbSet<Brand> Brand { get; set; }
     public virtual DbSet<Car> Car { get; set; }
     public virtual DbSet<CarImage> CarImage { get; set; }

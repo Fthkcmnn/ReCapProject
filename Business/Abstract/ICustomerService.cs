@@ -8,7 +8,9 @@ namespace Business.Abstract
         IResult Add(Customer customer);
         IResult Update(Customer customer);
         IResult Delete(Customer customer);
-        IDataResult<IEnumerable<Customer>> GetCustomerById(int id);
+        IDataResult<Customer> GetCustomerById(int id);
+        IDataResult<Customer> GetCustomerLogin(string email,string password);
+        IDataResult<IEnumerable<Customer>> GetAll();
         Task<IDataResult<IEnumerable<Customer>>> GetAllAsync();
     }
 }

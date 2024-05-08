@@ -13,9 +13,12 @@ namespace Business.Abstract
 
         IResult Delete(User entity);
 
-        Task<IDataResult<IEnumerable<User>>> GetAllAsync();
+        IDataResult<IEnumerable<User>> GetAll();
 
+        Task<IDataResult<IEnumerable<User>>> GetAllAsync();
+        IDataResult<User> GetUserLogin(string email, string password);
         Task<IDataResult<User>> GetByIdAsync(int id);
+        IDataResult<User> GetById(int id);
 
     }
 }

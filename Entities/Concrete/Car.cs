@@ -21,10 +21,12 @@ namespace Entities.Concrete
         public int ColorId { get; set; }
         public int FuelId { get; set; }
         public int ModelYear { get; set; }
-        public decimal? Milage { get; set; }
+        public decimal? Mileage { get; set; }
         public string? Seats { get; set; }
         public string? Luggage { get; set; }
         public string? Description { get; set; }
+        public bool isDeleted { get; set; }
+
 
         public virtual Brand Brand { get; set; }
 

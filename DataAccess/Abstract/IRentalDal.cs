@@ -7,6 +7,6 @@ namespace DataAccess.Abstract
 {
     public interface IRentalDal : IEntityRepository<Rental>
     {
-        Task<IEnumerable<RentalDetailDTOs>> GetRentalDetailAsync(Expression<Func<RentalDetailDTOs, bool>>? filter = null);
+        IEnumerable<RentalDetailDTOs> GetRentalDetails(Expression<Func<RentalDetailDTOs, bool>>? filter = null);
     }
 }

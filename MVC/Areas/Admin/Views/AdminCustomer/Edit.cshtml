@@ -1,0 +1,51 @@
+﻿@model MVC.Areas.Admin.Models.AdminCustomerModels.AdminCustomerEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.Data.CustomerID" />
+            <div class="form-group">
+                <label asp-for="Customer.Data.FirstName" class="control-label"></label>
+                <input asp-for="Customer.Data.FirstName" class="form-control" />
+                <span asp-validation-for="Customer.Data.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Data.LastName" class="control-label"></label>
+                <input asp-for="Customer.Data.LastName" class="form-control" />
+                <span asp-validation-for="Customer.Data.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Data.Phone" class="control-label"></label>
+                <input asp-for="Customer.Data.Phone" class="form-control" />
+                <span asp-validation-for="Customer.Data.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Data.Email" class="control-label"></label>
+                <input asp-for="Customer.Data.Email" class="form-control" />
+                <span asp-validation-for="Customer.Data.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Data.Adress" class="control-label"></label>
+                <input asp-for="Customer.Data.Adress" class="form-control" />
+                <span asp-validation-for="Customer.Data.Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Dön</a>
+</div>
+

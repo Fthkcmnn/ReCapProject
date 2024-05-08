@@ -9,4 +9,5 @@ public interface ICarDal : IEntityRepository<Car>
 {
     IEnumerable<CarDetailDTOs> GetCarDitails(Expression<Func<CarDetailDTOs, bool>>? filter = null);
 	CarDetailDTOs GetCarDitail(Expression<Func<CarDetailDTOs, bool>>? filter = null);
+    CarDetailEditDTO GetCarDitailEdit(Expression<Func<CarDetailEditDTO, bool>>? filter = null);
 }

@@ -31,7 +31,7 @@
     <!-- BEGIN nav -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Car<span>Book</span></a>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">ARACIN<span>KAPINDA</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -56,9 +56,9 @@
                     <li class="nav-item @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Blog" ? "active" : "")">
                         <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
                     </li>
-                    <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")">
+                   @*  <li class="nav-item @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")">
                         <a asp-controller="Contact" asp-action="Index" class="nav-link">İletişim</a>
-                    </li>
+                    </li> *@
                 </ul>
             </div>
 
@@ -73,8 +73,8 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <h2 class="ftco-heading-2"><a href="@Url.Action("Index", "Home")" class="logo">ARACIN<span>KAPINDA</span></a></h2>
+                        <p>Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -84,34 +84,34 @@
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4 ml-md-5">
-                        <h2 class="ftco-heading-2">Information</h2>
+                        <h2 class="ftco-heading-2">Bilgi</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">About</a></li>
-                            <li><a href="#" class="py-2 d-block">Services</a></li>
-                            <li><a href="#" class="py-2 d-block">Term and Conditions</a></li>
-                            <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
-                            <li><a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a></li>
+                            <li><a href="#" class="py-2 d-block">Hakkımızda</a></li>
+                            <li><a href="#" class="py-2 d-block">Hizmetler</a></li>
+                            <li><a href="#" class="py-2 d-block">Koşullar ve Şartlar</a></li>
+                            <li><a href="#" class="py-2 d-block">En İyi Fiyat Garantisi</a></li>
+                            <li><a href="#" class="py-2 d-block">Gizlilik &amp; Çerez Politikası</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Customer Support</h2>
+                        <h2 class="ftco-heading-2">Müşteri Desteği</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">FAQ</a></li>
-                            <li><a href="#" class="py-2 d-block">Payment Option</a></li>
-                            <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
-                            <li><a href="#" class="py-2 d-block">How it works</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                            <li><a href="#" class="py-2 d-block">SSS</a></li>
+                            <li><a href="#" class="py-2 d-block">Ödeme Seçenekleri</a></li>
+                            <li><a href="#" class="py-2 d-block">Rezervasyon İpuçları</a></li>
+                            <li><a href="#" class="py-2 d-block">Nasıl Çalışır</a></li>
+                            <li><a href="#" class="py-2 d-block">Bize Ulaşın</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <h2 class="ftco-heading-2">Sorularınız mı var?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">203 Sahte Cad. Mountain View, San Francisco, California, ABD</span></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
                             </ul>
@@ -123,14 +123,15 @@
                 <div class="col-md-12 text-center">
 
                     <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <!-- Colorlib'e geri bağlantıyı kaldıramazsınız. Şablon CC BY 3.0 lisansı altında lisanslanmıştır. -->
+                        Telif Hakkı &copy;<script>document.write(new Date().getFullYear());</script> Tüm hakları saklıdır | Bu şablon, <i class="icon-heart color-danger" aria-hidden="true"></i> tarafından <a href="https://colorlib.com" target="_blank">Colorlib</a> ile oluşturulmuştur
+                        <!-- Colorlib'e geri bağlantıyı kaldıramazsınız. Şablon CC BY 3.0 lisansı altında lisanslanmıştır. -->
                     </p>
                 </div>
             </div>
         </div>
     </footer>
+
 
     <!-- END footer -->
     <!-- loader -->

@@ -1,16 +1,15 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewBag.Title = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/User/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-3 bread">Our Blog</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="@Url.Action("Index", "Home")">Ana Sayfa <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Blog Yazılarımız</h1>
             </div>
         </div>
     </div>
@@ -21,102 +20,102 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry justify-content-end mb-md-5">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_1.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_1.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry justify-content-end mb-md-5">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_2.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_2.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_3.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_3.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry justify-content-end mb-md-5">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_4.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_4.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry justify-content-end mb-md-5">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_5.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_5.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20 img" style="background-image: url('images/image_6.jpg');">
+                    <a href="#" class="block-20 img" style="background-image: url('/User/images/image_6.jpg');">
                     </a>
                     <div class="text px-md-5 pt-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Oct. 29, 2019</a></div>
-                            <div><a href="#">Admin</a></div>
+                            <div><a href="#">29 Ekim 2019</a></div>
+                            <div><a href="#">Yönetici</a></div>
                             <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <p><a href="blog-single.html" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
+                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
+                        <p><a href="#" class="btn btn-primary">Devam Et <span class="icon-long-arrow-right"></span></a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-5">
+        @* <div class="row mt-5">
             <div class="col text-center">
                 <div class="block-27">
                     <ul>
@@ -130,6 +129,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> *@
     </div>
 </section>

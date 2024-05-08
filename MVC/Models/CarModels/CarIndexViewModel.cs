@@ -7,7 +7,6 @@ namespace MVC.Models.CarModels
 {
     public class CarIndexViewModel
     {
-
         public List<CarDetailDTOs>? CarDetails { get; set; }
     }
 }

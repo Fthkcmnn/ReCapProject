@@ -16,7 +16,8 @@ namespace Entities.DTOs
         public decimal PerDayRate { get; set; }
         public decimal PerWeekRate { get; set; }
         public decimal PerMounthRate { get; set; }
-        public decimal Surcharge { get; set; }
+        public decimal? Surcharge { get; set; }
+        public string? Seats { get; set; }
         public string? Luggage { get; set; }
         public string? Fuel { get; set; }
         public string? Description { get; set; }

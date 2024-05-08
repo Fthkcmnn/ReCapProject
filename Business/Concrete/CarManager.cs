@@ -51,7 +51,7 @@ public class CarManager : ICarService
 
     public IDataResult<Car> GetCarById(int id)
     {
-        var result = _carDal?.Get(car => car.CarId == id);
+        var result = _carDal?.Get(car => car.CarId == id && car.isDeleted == false);
         if (result is null)
         {
             return new ErrorDataResult<Car>(result, Messages.Null);
@@ -92,16 +92,16 @@ public class CarManager : ICarService
 
     public IDataResult<IEnumerable<Car>> GetAll()
     {
-        var resutl = _carDal?.GetAll();
-        return new SuccessDataResult<IEnumerable<Car>>(resutl, Messages.CarsListed);
+        var result = _carDal?.GetAll(car => car.isDeleted == false);
+        return new SuccessDataResult<IEnumerable<Car>>(data: result, message: Messages.CarsListed);
     }
 
     public async Task<IDataResult<IEnumerable<Car>>> GetAllAsync()
     {
         try
         {
-            var result = await _carDal.GetAllAsync();
-            return new SuccessDataResult<IEnumerable<Car>>(result);
+            var result = await _carDal.GetAllAsync(car => car.isDeleted == false);
+            return new SuccessDataResult<IEnumerable<Car>>(data: result);
         }
         catch (Exception ex)
         {
@@ -110,9 +110,15 @@ public class CarManager : ICarService
         }
     }
 
-	public IDataResult<CarDetailDTOs> GetCarDetailsById(int id)
-	{
-		var result = _carDal.GetCarDitail(cd => cd.CarID == id);
+    public IDataResult<CarDetailDTOs> GetCarDetailsById(int id)
+    {
+        var result = _carDal.GetCarDitail(cd => cd.CarID == id);
         return new SuccessDataResult<CarDetailDTOs>(result);
-	}
+    }
+
+    public IDataResult<CarDetailEditDTO> GetCarDetailEdit(int id)
+    {
+        var result = _carDal.GetCarDitailEdit(cd => cd.CarID == id);
+        return new SuccessDataResult<CarDetailEditDTO>(result);
+    }
 }

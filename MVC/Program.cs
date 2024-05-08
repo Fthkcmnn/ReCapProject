@@ -1,48 +1,79 @@
-    using Autofac.Extensions.DependencyInjection;
-    using Autofac;
-    using Business.DependencyResolvers.Autofac;
-    using Microsoft.AspNetCore.Mvc.Razor;
+using Autofac.Extensions.DependencyInjection;
+using Autofac;
+using Business.DependencyResolvers.Autofac;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using DataAccess.Concrete.EntityFramework.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System;
+using Autofac.Core;
 
-    var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
-    builder.Services.Configure<RazorViewEngineOptions>(options =>
-    {
-        options.AreaViewLocationFormats.Clear();
-        options.AreaViewLocationFormats.Add("/admin/{2}/Views/{1}/{0}.cshtml");
-        options.AreaViewLocationFormats.Add("/admin/{2}/Views/Shared/{0}.cshtml");
-        options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
-    });
+// Razor view engine configuration
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.AreaViewLocationFormats.Clear();
+    options.AreaViewLocationFormats.Add("/admin/{2}/Views/{1}/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/admin/{2}/Views/Shared/{0}.cshtml");
+    options.AreaViewLocationFormats.Add("/Views/Shared/{0}.cshtml");
+});
 
-    // Add services to the container.
-    builder.Services.AddControllersWithViews();
+// Add services to the container
+builder.Services.AddSession();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Account/Login"; // Redirect to login page when not authenticated
+            options.LogoutPath = "/Account/Logout"; // Redirect to logout page when user logs out
+            options.AccessDeniedPath = "/Account/AccessDenied"; // Redirect to access denied page when user is not authorized
+            options.Cookie.Name = "YourAppCookieName"; // Cookie name for session
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Session timeout
+        });
+builder.Services.AddControllersWithViews();
 
-    builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-    builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
-    {
-        builder.RegisterModule(new AutofacBusinessModule());
-    });
-    var app = builder.Build();
-    // Configure the HTTP request pipeline.
-    if (!app.Environment.IsDevelopment())
-    {
-        app.UseExceptionHandler("/Home/Error");
-        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-        app.UseHsts();
-    }
+// Autofac integration
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+{
+    builder.RegisterModule(new AutofacBusinessModule());
+});
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // Make the session cookie essential
+});
+builder.Services.AddScoped<MVC.Session.SessionAuthorizationFilter>();
 
-    app.UseHttpsRedirection();
-    app.UseStaticFiles();
+// Database configuration
+//var configuration = builder.Configuration;
+//var connectionString = configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<ReCarContext>(options =>
+//    options.UseSqlServer(connectionString));
 
-    app.UseRouting();
+var app = builder.Build();
 
-    app.UseAuthorization();
+// Configure the HTTP request pipeline
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
-    app.MapControllerRoute(
-	    name: "Admin",
-	    pattern: "{area:exists}/{controller=AdminHome}/{action=Index}/{id?}");
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseSession();
+app.UseAuthorization();
+app.UseAuthentication(); // Add this line for authentication
 
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+// Controller routing
+app.MapControllerRoute(
+        name: "Admin",
+        pattern: "{area:exists}/{controller=AdminHome}/{action=Index}/{id?}");
 
-    app.Run();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();

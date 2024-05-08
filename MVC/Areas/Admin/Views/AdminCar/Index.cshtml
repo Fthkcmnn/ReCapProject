@@ -1,90 +1,68 @@
-﻿@model IEnumerable<Entities.Concrete.Car>
+﻿@model IEnumerable<Entities.DTOs.CarDetailDTOs>
 
 @{
     ViewData["Title"] = "Car";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Car</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ModelYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Milage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Seats)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Luggage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fuel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Transmission)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModelYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Milage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Seats)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Luggage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fuel.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transmission.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CarId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CarId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CarId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="card">
+    <div class="card-body">
+        <p>
+            <a asp-action="Add" class="btn btn-primary">Ekle</a>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Car ID</th>
+                        <th>Brand Name</th>
+                        <th>Model Name</th>
+                        <th>Color Name</th>
+                        <th>Model Year</th>
+                        <th>Mileage</th>
+                        <th>Transmission</th>
+                        <th>Per Hour Rate</th>
+                        <th>Per Day Rate</th>
+                        <th>Per Week Rate</th>
+                        <th>Per Month Rate</th>
+                        <th>Surcharge</th>
+                        <th>Seats</th>
+                        <th>Luggage</th>
+                        <th>Fuel</th>
+                        <th>Image Path</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var carDetail in Model)
+                    {
+                        <tr>
+                            <td>@carDetail.CarID</td>
+                            <td>@carDetail.BrandName</td>
+                            <td>@carDetail.ModelName</td>
+                            <td>@carDetail.ColorName</td>
+                            <td>@carDetail.ModelYear</td>
+                            <td>@carDetail.Mileage</td>
+                            <td>@carDetail.Transmission</td>
+                            <td>@carDetail.PerHourRate</td>
+                            <td>@carDetail.PerDayRate</td>
+                            <td>@carDetail.PerWeekRate</td>
+                            <td>@carDetail.PerMounthRate</td>
+                            <td>@carDetail.Surcharge</td>
+                            <td>@carDetail.Seats</td>
+                            <td>@carDetail.Luggage</td>
+                            <td>@carDetail.Fuel</td>
+                            <td>@carDetail.ImagePath</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@carDetail.CarID" class="btn btn-sm btn-primary">Düzenle</a>
+                                <a asp-action="Delete" asp-route-id="@carDetail.CarID" class="btn btn-sm btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

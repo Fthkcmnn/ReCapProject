@@ -36,20 +36,29 @@ namespace Business.Concrete
 
         public async Task<IDataResult<IEnumerable<RentalDetailDTOs>>> GetRentalDetailsAsync()
         {
-            var result = await _rentalDal.GetRentalDetailAsync();
-            return new SuccessDataResult<IEnumerable<RentalDetailDTOs>>(result);
+            throw new NotImplementedException();
         }
 
         public async Task<IDataResult<IEnumerable<RentalDetailDTOs>>> GetRentalDetailsByCustomerName(string name)
         {
-            var result = await _rentalDal.GetRentalDetailAsync(os => os.CustomerFullName.Equals(name));
-            return new SuccessDataResult<IEnumerable<RentalDetailDTOs>>(result);
+            throw new NotImplementedException();
         }
 
         public async Task<IDataResult<IEnumerable<RentalDetailDTOs>>> GetRentalDetailsByCarName(string carName)
         {
-            var result = await _rentalDal.GetRentalDetailAsync(os => os.CarName == carName);
+           throw new NotImplementedException();
+        }
+
+        public IDataResult<IEnumerable<RentalDetailDTOs>> GetRentalDetails()
+        {
+            var result = _rentalDal.GetRentalDetails();
             return new SuccessDataResult<IEnumerable<RentalDetailDTOs>>(result);
+        }
+
+        public IDataResult<IEnumerable<Rental>> GetAll()
+        {
+            var result = _rentalDal.GetAll();
+            return new SuccessDataResult<IEnumerable<Rental>>(result);
         }
     }
 }

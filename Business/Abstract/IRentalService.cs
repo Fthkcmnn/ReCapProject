@@ -12,6 +12,9 @@ namespace Business.Abstract
 
         IResult Update(Rental rental);
 
+        IDataResult<IEnumerable<RentalDetailDTOs>> GetRentalDetails();
+        IDataResult<IEnumerable<Rental>> GetAll();
+
         Task<IDataResult<IEnumerable<RentalDetailDTOs>>> GetRentalDetailsAsync();
 
         Task<IDataResult<IEnumerable<RentalDetailDTOs>>> GetRentalDetailsByCustomerName(string name);

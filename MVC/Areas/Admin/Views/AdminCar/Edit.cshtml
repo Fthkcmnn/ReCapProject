@@ -1,4 +1,4 @@
-﻿@model Entities.DTOs.CarDetailDTOs
+﻿@model Entities.DTOs.CarDetailEditDTO
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
@@ -6,88 +6,142 @@
 
 <h1>Edit</h1>
 
-<h4>Car</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CarID" />
+
             <div class="form-group">
-                <label asp-for="BrandName" class="control-label"></label>
-                <input asp-for="BrandName" class="form-control" />
-                <span asp-validation-for="BrandName" class="text-danger"></span>
+                <label class="control-label">Transmission</label>
+                <select name="transmissionID" class="form-control">
+                    <option value="">Select Transmission</option>
+                    @foreach (var transmission in ViewData["Transmission"] as IEnumerable<SelectListItem>)
+                    {
+                        <option value="@transmission.Value" selected="@(int.Parse(transmission.Value) == Model.brandID ? "selected" : null)">@transmission.Text</option>
+
+                    }
+                </select>
+                <span class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
-                <label asp-for="ModelName" class="control-label"></label>
-                <input asp-for="ModelName" class="form-control" />
-                <span asp-validation-for="ModelName" class="text-danger"></span>
+                <label class="control-label">Brand</label>
+                <select name="brandID" class="form-control">
+                    <option value="">Select Brand</option>
+                    @foreach (var brand in ViewData["Brand"] as IEnumerable<SelectListItem>)
+                    {
+                        <option value="@brand.Value" selected="@(int.Parse(brand.Value) == Model.brandID ? "selected" : null)">@brand.Text</option>
+                    }
+                </select>
+                <span class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
-                <label asp-for="ColorName" class="control-label"></label>
-                <input asp-for="ColorName" class="form-control" />
-                <span asp-validation-for="ColorName" class="text-danger"></span>
+                <label class="control-label">Model</label>
+                <select name="modelID" class="form-control">
+                    <option value="">Select Model</option>
+                    @foreach (var modell in ViewData["Model"] as IEnumerable<SelectListItem>)
+                    {
+                        <option value="@modell.Value" selected="@(int.Parse(modell.Value) == Model.brandID ? "selected" : null)">@modell.Text</option>
+                    }
+                </select>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="ModelYear" class="control-label"></label>
+                <label class="control-label">Color</label>
+                <select name="colorID" class="form-control">
+                    <option value="">Select Color</option>
+                    @foreach (var color in ViewData["Color"] as IEnumerable<SelectListItem>)
+                    {
+                        <option value="@color.Value" selected="@(int.Parse(color.Value) == Model.brandID ? "selected" : null)">@color.Text</option>
+                    }
+                </select>
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Fuel</label>
+                <select name="fuelID" class="form-control">
+                    <option value="">Select Fuel</option>
+                    @foreach (var fuel in ViewData["Fuel"] as IEnumerable<SelectListItem>)
+                    {
+                        <option value="@fuel.Value" selected="@(int.Parse(fuel.Value) == Model.brandID ? "selected" : null)">@fuel.Text</option>
+                    }
+                </select>
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Model Year</label>
                 <input asp-for="ModelYear" class="form-control" />
-                <span asp-validation-for="ModelYear" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Mileage" class="control-label"></label>
+                <label class="control-label">Mileage</label>
                 <input asp-for="Mileage" class="form-control" />
-                <span asp-validation-for="Mileage" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Transmission" class="control-label"></label>
-                <input asp-for="Transmission" class="form-control" />
-                <span asp-validation-for="Transmission" class="text-danger"></span>
+                <label class="control-label">Seats</label>
+                <input asp-for="Seats" class="form-control" />
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PerHourRate" class="control-label"></label>
+                <label class="control-label">Per Hour Rate</label>
                 <input asp-for="PerHourRate" class="form-control" />
-                <span asp-validation-for="PerHourRate" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PerDayRate" class="control-label"></label>
+                <label class="control-label">Per Day Rate</label>
                 <input asp-for="PerDayRate" class="form-control" />
-                <span asp-validation-for="PerDayRate" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PerWeekRate" class="control-label"></label>
+                <label class="control-label">Per Week Rate</label>
                 <input asp-for="PerWeekRate" class="form-control" />
-                <span asp-validation-for="PerWeekRate" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PerMounthRate" class="control-label"></label>
+                <label class="control-label">Per Month Rate</label>
                 <input asp-for="PerMounthRate" class="form-control" />
-                <span asp-validation-for="PerMounthRate" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Surcharge" class="control-label"></label>
+                <label class="control-label">Surcharge</label>
                 <input asp-for="Surcharge" class="form-control" />
-                <span asp-validation-for="Surcharge" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Luggage" class="control-label"></label>
-                <input asp-for="Luggage" class="form-control" />
-                <span asp-validation-for="Luggage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Fuel" class="control-label"></label>
-                <input asp-for="Fuel" class="form-control" />
-                <span asp-validation-for="Fuel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label class="control-label">Description</label>
                 <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
-                <span asp-validation-for="ImagePath" class="text-danger"></span>
+                <label class="control-label">Luggage</label>
+                <input asp-for="Luggage" class="form-control" />
+                <span class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label class="control-label">Image Path</label>
+                <input asp-for="ImagePath" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -99,4 +153,3 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-

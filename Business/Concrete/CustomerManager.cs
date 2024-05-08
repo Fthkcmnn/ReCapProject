@@ -27,16 +27,32 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CustomerDeleted);
         }
 
-        public async Task<IDataResult<IEnumerable<Customer>>> GetAllAsync()
+        public IDataResult<IEnumerable<Customer>> GetAll()
         {
-            var result = await _customerDal.GetAllAsync();
+            var result = _customerDal.GetAll(c => c.isDeleted == false);
             return new SuccessDataResult<IEnumerable<Customer>>(result);
         }
 
-        public IDataResult<IEnumerable<Customer>> GetCustomerById(int id)
+        public async Task<IDataResult<IEnumerable<Customer>>> GetAllAsync()
         {
-            var result = _customerDal.GetAll(customer => customer.CustomerID == id);
+            var result = await _customerDal.GetAllAsync(c => c.isDeleted == false);
             return new SuccessDataResult<IEnumerable<Customer>>(result);
+        }
+
+        public IDataResult<Customer> GetCustomerById(int id)
+        {
+            var result = _customerDal.Get(c => c.CustomerID == id && c.isDeleted == false);
+            return new SuccessDataResult<Customer>(result);
+        }
+
+        public IDataResult<Customer> GetCustomerLogin(string email, string password)
+        {
+            var result = _customerDal.Get(c => c.Email.ToLower() == email.ToLower() && c.Password.ToLower() == password.ToLower() && c.isDeleted == false);
+            if (result.CustomerID == 0 )
+            {
+                return new ErrorDataResult<Customer>(result);
+            }
+            return new SuccessDataResult<Customer>(result);
         }
 
         public IResult Update(Customer customer)

@@ -16,24 +16,13 @@ namespace MVC.Controllers
             _carService = carService;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index()
         {
-            //if (page < 1)
-            //{
-            //    return NotFound();
-            //}
-            //int pageNumber = page; // Sayfa numarasını al, yoksa varsayılan olarak 1.
-            //int pageSize = 10; // Her sayfada kaç öğe gösterileceği.
-            //var records = _carService.GetCarDetails().Data.ToPagedList(pageNumber, pageSize);
-            
-            //if (records.PageNumber != 1 && page > records.PageCount)
-            //{
-            //    return NotFound();
-            //}
             var model = new CarIndexViewModel
             {
                 CarDetails = _carService.GetCarDetails().Data.ToList()
             };
+
             return View(model);
         }
 
@@ -41,8 +30,10 @@ namespace MVC.Controllers
         {
             var model = new CarDetayViewModel
             {
-                CarDetails = _carService.GetCarDetailsById(id).Data
-            };
+                CarDetail = _carService.GetCarDetailsById(id).Data,
+                CarDetails = _carService.GetCarDetails().Data.Take(5).ToList()
+			};
+
             if (model == null)
             {
                 return BadRequest();

@@ -16,7 +16,7 @@ namespace ConsoleUI
         public int? ColorId { get; set; }
         public int? FuelId { get; set; }
         public int? ModelYear { get; set; }
-        public decimal? Milage { get; set; }
+        public decimal? Mileage { get; set; }
         public string? seats { get; set; }
         public string? Luggage { get; set; }
         public string? Description { get; set; }

@@ -51,6 +51,7 @@ namespace Business.Constant
         internal static readonly string NoCarImage = "Araba resmi bulunamadı.";
 
         internal static readonly string CarImagesListed = "Araba resimleri listelendi.";
+        internal static readonly User UserNotFound;
 
         public static string FuelAdded { get; internal set; }
         public static string FuelsListed { get; internal set; }
