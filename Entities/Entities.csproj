@@ -21,6 +21,7 @@
 
 	<ItemGroup>
 		<Folder Include="Abstract\" />
+		<Folder Include="DTOs\" />
 	</ItemGroup>
 
 </Project>

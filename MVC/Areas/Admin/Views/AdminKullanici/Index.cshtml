@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Entities.Concrete.Kullanici>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kullaniciAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ePosta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.silindiMi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.olusturmaTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dogumTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sonDuzenlemeTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kullanici3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yetki)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kullaniciAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sifre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ePosta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.silindiMi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.olusturmaTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dogumTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sonDuzenlemeTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kullanici2.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kullanici3.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yetki.ad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.kullaniciID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.kullaniciID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.kullaniciID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

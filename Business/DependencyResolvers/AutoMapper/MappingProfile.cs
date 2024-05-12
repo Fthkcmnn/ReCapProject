@@ -1,7 +1,6 @@
 ﻿
 using AutoMapper;
 using Entities.Concrete;
-using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace Business.DependencyResolvers.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<CarDetailEditDTO, Car>();
+
             //CreateMap<CarDetailEditDTO, Car>();
             //CreateMap<CarDetailEditDTO, Car>();
             //CreateMap<CarDetailEditDTO, Car>();

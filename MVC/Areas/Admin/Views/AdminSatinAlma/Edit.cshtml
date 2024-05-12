@@ -1,0 +1,57 @@
+﻿@model Entities.Concrete.Satis
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Satis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="satisID" />
+            <div class="form-group">
+                <label asp-for="arabaID" class="control-label"></label>
+                <select asp-for="arabaID" class="form-control" asp-items="ViewBag.arabaID"></select>
+                <span asp-validation-for="arabaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="musteriID" class="control-label"></label>
+                <select asp-for="musteriID" class="form-control" asp-items="ViewBag.musteriID"></select>
+                <span asp-validation-for="musteriID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kiralamaTarih" class="control-label"></label>
+                <input asp-for="kiralamaTarih" class="form-control" />
+                <span asp-validation-for="kiralamaTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="iadeTarih" class="control-label"></label>
+                <input asp-for="iadeTarih" class="form-control" />
+                <span asp-validation-for="iadeTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ucret" class="control-label"></label>
+                <input asp-for="ucret" class="form-control" />
+                <span asp-validation-for="ucret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aciklama" class="control-label"></label>
+                <input asp-for="aciklama" class="form-control" />
+                <span asp-validation-for="aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

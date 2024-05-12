@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Entities.Concrete.Araba>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.arabaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.markaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.arabaResimID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.olusturanID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.renkID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kapiSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bagajGenislik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.koltukSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gunlukUcret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kayitTarih)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.arabaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.markaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modelID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.arabaResimID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.olusturanID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.renkID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kapiSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bagajGenislik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.koltukSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aciklama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gunlukUcret)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kayitTarih)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.arabaID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.arabaID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

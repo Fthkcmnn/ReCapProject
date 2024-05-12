@@ -4,7 +4,6 @@ using Business.DependencyResolvers.Autofac;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using DataAccess.Concrete.EntityFramework.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System;
 using Autofac.Core;

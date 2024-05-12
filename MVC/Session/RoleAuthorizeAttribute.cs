@@ -17,11 +17,11 @@
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            var user = context.HttpContext.Session.GetObjectFromJson<User>("kullanici");
+            var user = context.HttpContext.Session.GetObjectFromJson<Kullanici>("kullanici");
 
             if (user != null)
             {
-                string userRole = user.Phone;
+                string userRole = user.Yetki.ad;
 
                 if (userRole.Equals(_requiredRole, StringComparison.OrdinalIgnoreCase))
                 {

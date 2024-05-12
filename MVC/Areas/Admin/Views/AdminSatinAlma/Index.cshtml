@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Entities.Concrete.Satis>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.kiralamaTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.iadeTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ucret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Araba)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Musteri)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kiralamaTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.iadeTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ucret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Araba.aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Musteri.ad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.satisID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.satisID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.satisID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

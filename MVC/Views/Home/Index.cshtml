@@ -1,351 +1,482 @@
-﻿@model MVC.Models.HomeModels.HomeIndexViewModel
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="hero-wrap ftco-degree-bg" style="background-image: url('/User/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
+
+<div class="hero" style="background-image: url('/Frontend/images/hero_1_a.jpg');">
+
     <div class="container">
-        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
-            <div class="col-lg-8 ftco-animate">
-                <div class="text w-100 text-center mb-md-5 pb-md-5">
-                    <h1 class="mb-4">Hızlı &amp; Basit Araç Kiralama</h1>
-                    <p style="font-size: 18px;">
-                        Yepyeni bir maceraya hazır mısınız? Araç kiralama hizmetimizle hayalinizdeki yolculuğa adım atın. Geniş araç filomuz, uygun fiyatlarımız ve kolay rezervasyon sistemimizle seyahat deneyiminizi kolaylaştırıyoruz. Hemen aracınızı seçin ve keşfe çıkın!
-                    </p>
-                    @*  <a href="https://vimeo.com/45830194" class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="ion-ios-play"></span>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-10">
+
+                <div class="row mb-5">
+                    <div class="col-lg-7 intro">
+                        <h1><strong>Araç kiralama</strong> parmaklarınızın ucunda.</h1>
                     </div>
-                    <div class="heading-title ml-5">
-                    <span>Easy steps for renting a car</span>
-                    </div>
-                    </a> *@
                 </div>
+
+                <form class="trip-form">
+
+                    <div class="row align-items-center">
+
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <select name="" id="" class="custom-select form-control">
+                                <option value="">Tip Seçiniz</option>
+                                <option value="">Ferrari</option>
+                                <option value="">Toyota</option>
+                                <option value="">Ford</option>
+                                <option value="">Lamborghini</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <div class="form-control-wrap">
+                                <input type="text" id="cf-3" placeholder="Alma Tarihi" class="form-control datepicker px-3">
+                                <span class="icon icon-date_range"></span>
+
+                            </div>
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <div class="form-control-wrap">
+                                <input type="text" id="cf-4" placeholder="Bırakma Tarihi" class="form-control datepicker px-3">
+                                <span class="icon icon-date_range"></span>
+                            </div>
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <input type="submit" value="Şimdi Ara" class="btn btn-primary btn-block py-3">
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
         </div>
     </div>
 </div>
 
-<section class="ftco-section ftco-no-pt bg-light">
+
+
+<div class="site-section">
     <div class="container">
-        <div class="row no-gutters">
-            <div class="col-md-12	featured-top">
-                <div class="row no-gutters">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <form action="#" class="request-form ftco-animate bg-primary">
-                            <h2>Make your trip</h2>
-                            <div class="form-group">
-                                <label for="" class="label">Pick-up location</label>
-                                <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="label">Drop-off location</label>
-                                <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                            </div>
-                            <div class="d-flex">
-                                <div class="form-group mr-2">
-                                    <label for="" class="label">Pick-up date</label>
-                                    <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
-                                </div>
-                                <div class="form-group ml-2">
-                                    <label for="" class="label">Drop-off date</label>
-                                    <input type="text" class="form-control" id="book_off_date" placeholder="Date">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="label">Pick-up time</label>
-                                <input type="text" class="form-control" id="time_pick" placeholder="Time">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-8 d-flex align-items-center">
-                        <div class="services-wrap rounded-right w-100">
-                            <h3 class="heading-section mb-4">Araç Kiralamanın Mükemmel Yolu</h3>
-                            <div class="row d-flex mb-4">
-                                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                    <div class="services w-100 text-center">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
-                                        <div class="text w-100">
-                                            <h3 class="heading mb-2">Alma Noktanızı Seçin</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                    <div class="services w-100 text-center">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
-                                        <div class="text w-100">
-                                            <h3 class="heading mb-2">En İyi Teklif</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 d-flex align-self-stretch ftco-animate">
-                                    <div class="services w-100 text-center">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
-                                        <div class="text w-100">
-                                            <h3 class="heading mb-2">Araç Kiralamanın Mükemmel Yolu</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a asp-controller="Pricing" asp-action="Index" class="btn btn-primary py-3 px-4">Harika Arabanı Kirala</a>
-                        </div>
+        <h2 class="section-heading"><strong>Nasıl Çalışır?</strong></h2>
+        <p class="mb-5">Başlamanız için kolay adımlar</p>
+
+        <div class="row mb-5">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="step">
+                    <span>1</span>
+                    <div class="step-inner">
+                        <span class="number text-primary">01.</span>
+                        <h3>Araç Seçimi</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
                     </div>
                 </div>
             </div>
-        </div>
-</section>
-
-@Html.Partial("_FloatingCars",Model.CarDetails)
-
-<section class="ftco-section ftco-about">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url('@Url.Content("~/User/images/about.jpg")');">
-            </div>
-            <div class="col-md-6 wrap-about ftco-animate">
-                <div class="heading-section heading-section-white pl-md-5">
-                    <span class="subheading">Hakkımızda</span>
-                    <h2 class="mb-4">Carbook'a Hoş Geldiniz</h2>
-
-                    <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
-                    <p>Yolculuğu sırasında bir kopya ile karşılaştı. Kopya, Küçük Kör Metin'i uyardı, geldiği yerden bin kez yeniden yazılacağını ve orijininden kalan her şeyin "ve" kelimesi olacağını ve Küçük Kör Metin'in kendi güvenli ülkesine geri dönmesi gerektiğini söyledi. Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar. Paradisematic bir ülke olan Duden'de, cümlelerin kavrulmuş parçaları ağzınıza uçar.</p>
-                    <p><a href="@Url.Action("Index", "Car")" class="btn btn-primary py-3 px-4">Araç Ara</a></p>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="step">
+                    <span>2</span>
+                    <div class="step-inner">
+                        <span class="number text-primary">02.</span>
+                        <h3>Formu Doldurun</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-                <span class="subheading">Hizmetler</span>
-                <h2 class="mb-3">En Son Hizmetlerimiz</h2>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="step">
+                    <span>3</span>
+                    <div class="step-inner">
+                        <span class="number text-primary">03.</span>
+                        <h3>Ödeme</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
-                <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-wedding-car"></span></div>
-                    <div class="text w-100">
-                        <h3 class="heading mb-2">Düğün Töreni</h3>
-                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
-                    <div class="text w-100">
-                        <h3 class="heading mb-2">Şehir Transferi</h3>
-                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car"></span></div>
-                    <div class="text w-100">
-                        <h3 class="heading mb-2">Havalimanı Transferi</h3>
-                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-transportation"></span></div>
-                    <div class="text w-100">
-                        <h3 class="heading mb-2">Şehir Turu</h3>
-                        <p>Duden adında küçük bir nehir, onların yerlerinden geçer ve onlara gerekli regelialia'yı sağlar.</p>
-                    </div>
-                </div>
+            <div class="col-lg-4 mx-auto">
+                <a href="#" class="d-flex align-items-center play-now mx-auto">
+                    <span class="icon">
+                        <span class="icon-play"></span>
+                    </span>
+                    <span class="caption">Nasıl Çalışır Video</span>
+                </a>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="ftco-section ftco-intro" style="background-image: url(/User/images/bg_3.jpg);">
-    <div class="overlay"></div>
+<div class="site-section">
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-md-6 heading-section heading-section-white ftco-animate">
-                <h2 class="mb-3">Bizimle Kazanmak İster misiniz? O zaman Gecikmeyin.</h2>
-                <a href="#" class="btn btn-primary btn-lg">Sürücü Ol</a>
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center order-lg-2">
+                <div class="img-wrap-1 mb-5">
+                    <img src="~/Frontend/images/feature_01.png" alt="Resim" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-4 ml-auto order-lg-1">
+                <h3 class="mb-4 section-heading"><strong>Araç kiralama promosyonumuzu kolayca kullanabilirsiniz.</strong></h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, explicabo iste a labore id est quas, doloremque veritatis! Provident odit pariatur dolorem quisquam, voluptatibus voluptates optio accusamus, vel quasi quidem!</p>
+
+                <p><a href="#" class="btn btn-primary">Şimdi Buluşun</a></p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="ftco-section testimony-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-                <span class="subheading">Referans</span>
-                <h2 class="mb-3">Mutlu Müşteriler</h2>
-            </div>
-        </div>
-        <div class="row ftco-animate">
-            <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel ftco-owl">
-                    <div class="item">
-                        <div class="testimony-wrap rounded text-center py-4 pb-5">
-                            <div class="user-img mb-2" style="background-image: url(/User/images/person_1.jpg)">
-                            </div>
-                            <div class="text pt-4">
-                                <p class="mb-4">Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
-                                <p class="name">Roger Scott</p>
-                                <span class="position">Pazarlama Müdürü</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap rounded text-center py-4 pb-5">
-                            <div class="user-img mb-2" style="background-image: url(/User/images/person_2.jpg)">
-                            </div>
-                            <div class="text pt-4">
-                                <p class="mb-4">Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
-                                <p class="name">Roger Scott</p>
-                                <span class="position">Arayüz Tasarımcısı</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap rounded text-center py-4 pb-5">
-                            <div class="user-img mb-2" style="background-image: url(/User/images/person_3.jpg)">
-                            </div>
-                            <div class="text pt-4">
-                                <p class="mb-4">Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
-                                <p class="name">Roger Scott</p>
-                                <span class="position">UI Tasarımcısı</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap rounded text-center py-4 pb-5">
-                            <div class="user-img mb-2" style="background-image: url(/User/images/person_1.jpg)">
-                            </div>
-                            <div class="text pt-4">
-                                <p class="mb-4">Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
-                                <p class="name">Roger Scott</p>
-                                <span class="position">Web Geliştirici</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap rounded text-center py-4 pb-5">
-                            <div class="user-img mb-2" style="background-image: url(/User/images/person_1.jpg)">
-                            </div>
-                            <div class="text pt-4">
-                                <p class="mb-4">Uzak, uzakta, dağların arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşar.</p>
-                                <p class="name">Roger Scott</p>
-                                <span class="position">Sistem Analisti</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Blog</span>
-                <h2>Yeni Blog Yazıları</h2>
-            </div>
-        </div>
-        <div class="row d-flex">
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('/User/images/image_1.jpg');">
-                    </a>
-                    <div class="text pt-4">
-                        <div class="meta mb-3">
-                            <div><a href="#">29 Ekim 2019</a></div>
-                            <div><a href="#">Yönetici</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
-                        <p><a href="#" class="btn btn-primary">Devamını Oku</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('/User/images/image_2.jpg');">
-                    </a>
-                    <div class="text pt-4">
-                        <div class="meta mb-3">
-                            <div><a href="#">29 Ekim 2019</a></div>
-                            <div><a href="#">Yönetici</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
-                        <p><a href="#" class="btn btn-primary">Devamını Oku</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex ftco-animate">
-                <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('/User/images/image_3.jpg');">
-                    </a>
-                    <div class="text pt-4">
-                        <div class="meta mb-3">
-                            <div><a href="#">29 Ekim 2019</a></div>
-                            <div><a href="#">Yönetici</a></div>
-                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                        </div>
-                        <h3 class="heading mt-2"><a href="#">Neden Kurumsal Büyüme İçin Müşteri Yönlendirme Önemlidir</a></h3>
-                        <p><a href="#" class="btn btn-primary">Devamını Oku</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="ftco-counter ftco-section img bg-light" id="section-counter">
-    <div class="overlay"></div>
+<div class="site-section bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                    <div class="text text-border d-flex align-items-center">
-                        <strong class="number" data-number="60">0</strong>
-                        <span>Yıl <br>Deneyimli</span>
+            <div class="col-lg-7">
+                <h2 class="section-heading"><strong>Araç Listesi</strong></h2>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_6.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Mitsubishi Pajero</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_5.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Nissan Moco</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_4.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Honda Fitta</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_3.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Skoda Laura</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_2.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Mazda LaPuta</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4 mb-4">
+
+                <div class="listing d-block  align-items-stretch">
+                    <div class="listing-img h-100 mr-4">
+                        <img src="~/Frontend/images/car_1.jpg" alt="Resim" class="img-fluid">
+                    </div>
+                    <div class="listing-contents h-100">
+                        <h3>Buick LaCrosse</h3>
+                        <div class="rent-price">
+                            <strong>$389.00</strong><span class="mx-1">/</span>gün
+                        </div>
+                        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Bavul:</span>
+                                <span class="number">8</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Kapılar:</span>
+                                <span class="number">4</span>
+                            </div>
+                            <div class="listing-feature pr-4">
+                                <span class="caption">Yolcu:</span>
+                                <span class="number">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Şimdi Kirala</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="section-heading"><strong>Özellikler</strong></h2>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-home"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                    <div class="text text-border d-flex align-items-center">
-                        <strong class="number" data-number="1090">0</strong>
-                        <span>Toplam <br>Araç</span>
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-gear"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                    <div class="text text-border d-flex align-items-center">
-                        <strong class="number" data-number="2590">0</strong>
-                        <span>Mutlu <br>Müşteriler</span>
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-watch_later"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                    <div class="text d-flex align-items-center">
-                        <strong class="number" data-number="67">0</strong>
-                        <span>Toplam <br>Şube</span>
+
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-verified_user"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-video_library"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-5">
+                <div class="service-1 dark">
+                    <span class="service-1-icon">
+                        <span class="icon-vpn_key"></span>
+                    </span>
+                    <div class="service-1-contents">
+                        <h3>Lorem ipsum dolor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
+                        <p class="mb-0"><a href="#">Daha Fazla Bilgi Al</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="section-heading"><strong>Referanslar</strong></h2>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="testimonial-2">
+                    <blockquote class="mb-4">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                    </blockquote>
+                    <div class="d-flex v-card align-items-center">
+                        <img src="~/Frontend/images/person_1.jpg" alt="Resim" class="img-fluid mr-3">
+                        <span>Mehmet Öz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="testimonial-2">
+                    <blockquote class="mb-4">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                    </blockquote>
+                    <div class="d-flex v-card align-items-center">
+                        <img src="~/Frontend/images/person_2.jpg" alt="Resim" class="img-fluid mr-3">
+                        <span>Ahmet Yılmaz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="testimonial-2">
+                    <blockquote class="mb-4">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                    </blockquote>
+                    <div class="d-flex v-card align-items-center">
+                        <img src="~/Frontend/images/person_3.jpg" alt="Resim" class="img-fluid mr-3">
+                        <span>Ali Demir</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
